@@ -1,0 +1,26 @@
+{% extends 'base2.html' %}
+
+{% block title %}Movies{% endblock title %}
+
+{% block body %}
+<div class="album py-5 bg-secondary">
+    <div class="container bg-secondary">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 bg-dark">
+            {% for i in some %}
+            <div class="col bg-secondary bg-dark"  >
+                <div class="card shadow-sm bg-dark">
+                    <img src="{{i.filepic}}"
+                        width="100%" height="225" alt="">
+                    <div class="card-body">
+                        <p class="card-text text-dark">
+                            <a class="text-light" name="movieid" id="movieid" style="font-family: 'Caveat', cursive; text-decoration: none;" href="{% url 'movieitem' i.name %}">{{i.name}} {{i.disc}}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock body %}
